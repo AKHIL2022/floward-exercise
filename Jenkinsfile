@@ -18,6 +18,12 @@ pipeline {
                 '''
             }
         }
+
+        stage('Mend Scan') {
+            steps {
+                mend()
+            }
+        }
        
         stage('Install Terraform and AWS CLI') {
             steps {
