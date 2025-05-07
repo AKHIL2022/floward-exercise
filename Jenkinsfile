@@ -21,7 +21,7 @@ pipeline {
 
         stage('Mend Scan') {
             steps {
-                mend()
+                mend(projectName: "${applicationName})
             }
         }
        
