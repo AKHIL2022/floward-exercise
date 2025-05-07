@@ -2,7 +2,7 @@
 
 String applicationName = 'HCLCODE_Test'
 String localFolderName = '.'
-Boolean IsPackageJsonChanged = true
+Boolean isPackageJsonChanged = true
 
 pipeline {
     agent any
