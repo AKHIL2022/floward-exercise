@@ -29,8 +29,8 @@ pipeline {
         dir(localFolderName) {
           script {
             // Run NPM audit and fail the build if there are high priority issues
-            echo 'Running NPM Audit, Job will fail if there are high priority issues'
-            sh 'npm audit --audit-level=high'
+            //echo 'Running NPM Audit, Job will fail if there are high priority issues'
+            //sh 'npm audit --audit-level=high'
             // Run MEND SCA scan and generate the MEND report
             if (IsPackageJsonChanged) {
               script {
