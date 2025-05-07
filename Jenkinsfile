@@ -1,6 +1,8 @@
 //@Library('jenkins-shared-library') _
 
 String applicationName = 'HCLCODE_Test'
+String localFolderName = '.'
+Boolean IsPackageJsonChanged = true
 
 pipeline {
     agent any
