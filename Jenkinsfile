@@ -6,6 +6,9 @@ Boolean IsPackageJsonChanged = true
 
 pipeline {
     agent any
+    tools {
+    nodejs '18.14.2'
+  }
     stages {
         stage('Check Prerequisites') {
             steps {
