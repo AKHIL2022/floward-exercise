@@ -22,7 +22,10 @@ pipeline {
         stage('Mend Scan') {
             steps {
                 mend(
-                projectName: "${applicationName}"
+                projectName: params.applicationName
+                applicationName: params.APP_NAME,
+                localFolderName: params.localFolderName
+                isPackageJsonChanged: params.isPackageJsonChanged
                 )
             }
         }
