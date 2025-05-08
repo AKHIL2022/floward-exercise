@@ -1,7 +1,7 @@
 //@Library('jenkins-shared-library') _
 
 String applicationName = 'HCLCODE_Test'
-String localFolderName = '.'
+String localFolderName = 'floward-exercise'
 Boolean isPackageJsonChanged = true
 
 pipeline {
