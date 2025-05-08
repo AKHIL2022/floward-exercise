@@ -21,7 +21,7 @@ pipeline {
 
         stage('Mend Scan') {
             steps {
-                mend(applicationName: applicationName, 
+                mend("${applicationName}-ui", 
                      localFolderName: localFolderName, 
                      isPackageJsonChanged:isPackageJsonChanged
                 )     
