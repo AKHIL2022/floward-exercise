@@ -21,7 +21,10 @@ pipeline {
 
         stage('Mend Scan') {
             steps {
-                mend(applicationName, localFolderName, isPackageJsonChanged)
+                mend(applicationName: applicationName, 
+                     localFolderName: localFolderName, 
+                     isPackageJsonChanged:isPackageJsonChanged
+                )     
             }
         }
        
