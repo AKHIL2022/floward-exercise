@@ -23,7 +23,6 @@ pipeline {
             steps {
                 mend(
                 projectName: params.applicationName
-                applicationName: params.APP_NAME,
                 localFolderName: params.localFolderName
                 isPackageJsonChanged: params.isPackageJsonChanged
                 )
