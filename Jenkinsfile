@@ -1,7 +1,7 @@
 //@Library('jenkins-shared-library') _
 
 String applicationName = 'HCLCODE_Test'
-String localFolderName = 'floward-exercise'
+//String localFolderName = 'floward-exercise'
 
 pipeline {
     agent any
@@ -17,7 +17,7 @@ pipeline {
                 '''
             }
         }
-        stage('Check Changes') {
+        /* stage('Check Changes') {
       steps {
         script {
           changes = []
@@ -56,7 +56,7 @@ pipeline {
           }
         }
       }
-    }
+    } */
 
         stage('Mend Scan') {
             steps {
