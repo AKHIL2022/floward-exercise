@@ -67,23 +67,6 @@ pipeline {
                 )     
             }
         }
-       
-        stage('Install Terraform and AWS CLI') {
-            steps {
-                test()
-            }
-        }
-        stage('Validate Installation') {
-            steps {
-                sh '''
-                    echo "Validating Terraform installation..."
-                    $HOME/bin/terraform version
-                    
-                    echo "Validating AWS CLI installation..."
-                    $HOME/.local/bin/aws --version
-                '''
-            }
-        }
     }
     post {
         always {
