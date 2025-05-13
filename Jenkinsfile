@@ -18,6 +18,46 @@ pipeline {
                 '''
             }
         }
+        stage('Check Changes') {
+      steps {
+        script {
+          changes = []
+          build = currentBuild
+          while (build != null && build.result != 'SUCCESS') {
+            for (changeLog in build.changeSets) {
+              for (entry in changeLog.items) {
+                for (file in entry.affectedFiles) {
+                  changes += file.path
+                }
+              }
+            }
+            build = build.previousBuild
+            if (!build) {
+              changes = ["${localFolderName}/*"]
+            }
+          }
+          changes.unique().sort()
+          echo "Changed since last successful build: ${changes.isEmpty() ? 'none' : changes.join(', \n')}"
+          Relevant = changes.findAll { element ->
+            // Include changes to our localFolderPath
+            element ==~ /\Q$localFolderName\E\/.*/
+          }
+          Relevant = Relevant.findAll { element ->
+            // Ignore changes to *.test.js files
+            !(element ==~ /.*\.test\.js/)
+          }
+          IsPackageJsonChanged = Relevant.any { element ->
+            element ==~ /.*package-lock\.json/
+          }
+          HasRelevantChanges = !Relevant.isEmpty()
+          if (HasRelevantChanges) {
+            echo "There are changes that affect the deployment: ${Relevant.join(', ')}"
+          } else {
+            echo 'There are no changes that would affect the deployment'
+          }
+        }
+      }
+    }
 
         stage('Mend Scan') {
             steps {
