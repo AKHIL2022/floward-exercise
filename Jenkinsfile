@@ -61,7 +61,7 @@ pipeline {
             steps {
                 mend(
                      projectName: "${applicationName}-ui"
-                     localFolderName: localFolderName,
+                     folderName: localFolderName,
                      PackageJsonChanged: IsPackageJsonChanged
                     
                 )     
