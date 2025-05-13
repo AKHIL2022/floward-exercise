@@ -62,7 +62,7 @@ pipeline {
                 mend(
                      projectName: "${applicationName}-ui"
                      localFolderName: localFolderName,
-                     IsPackageJsonChanged: IsPackageJsonChanged
+                     PackageJsonChanged: IsPackageJsonChanged
                     
                 )     
             }
