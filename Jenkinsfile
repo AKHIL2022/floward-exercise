@@ -1,7 +1,7 @@
 //@Library('jenkins-shared-library') _
 
 String applicationName = 'HCLCODE_Test'
-//String localFolderName = 'floward-exercise'
+String localFolderName = 'floward-exercise'
 
 pipeline {
     agent any
@@ -61,7 +61,7 @@ pipeline {
             steps {
                 mend(
                      projectName: "${applicationName}-ui"
-                     //localFolderName: localFolderName,
+                     localFolderName: localFolderName,
                      IsPackageJsonChanged: IsPackageJsonChanged
                     
                 )     
