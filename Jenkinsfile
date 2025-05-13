@@ -2,7 +2,6 @@
 
 String applicationName = 'HCLCODE_Test'
 String localFolderName = 'floward-exercise'
-Boolean isPackageJsonChanged = true
 
 pipeline {
     agent any
