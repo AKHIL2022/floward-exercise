@@ -60,7 +60,10 @@ pipeline {
         stage('Mend Scan') {
             steps {
                 mend(
-                     projectName: "${applicationName}-ui"
+                     projectName: "${applicationName}-ui",
+                     localFolderName: localFolderName,
+                     IsPackageJsonChanged: IsPackageJsonChanged
+                    
                 )     
             }
         }
