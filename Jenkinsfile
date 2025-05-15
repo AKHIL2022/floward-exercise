@@ -41,7 +41,15 @@ pipeline {
         }
         stage('test') {
             steps {
-                echo "objectname: ${s3ObjectName}"
+                update(
+                     packageName: packageName,
+                     s3BucketName: s3BucketName,
+                     gitEnvDevBranchName: gitEnvDevBranchName,
+                     versionFileName: versionFileName,  
+                     authorName: authorName,
+                     authorEmail: authorEmail,
+                     gitEnvRepoCredentialsId: gitEnvRepoCredentialsId,
+                     s3ObjectName: s3ObjectName   
             }
         }
         stage('Mend Scan') {
