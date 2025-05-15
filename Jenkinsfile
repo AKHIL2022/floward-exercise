@@ -19,7 +19,7 @@ pipeline {
             }
         }
 
-        stage('Mend Scan') {
+        stage('Publish to S3') {
             steps {
                 script {
                  publish()
