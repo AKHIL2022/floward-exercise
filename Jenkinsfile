@@ -49,7 +49,10 @@ pipeline {
                      authorName: authorName,
                      authorEmail: authorEmail,
                      gitEnvRepoCredentialsId: gitEnvRepoCredentialsId,
-                     s3ObjectName: s3ObjectName
+                     s3ObjectName: s3ObjectName,
+                     gitEnvUrl: gitEnvUrl,
+                     gitEnvRepoName: gitEnvRepoName
+                    
               )
             }
         }
