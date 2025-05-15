@@ -41,7 +41,7 @@ pipeline {
         }
         stage('test') {
             steps {
-                echo "objectname: ${s3ObjectName}
+                echo "objectname: ${s3ObjectName}"
             }
         }
         stage('Mend Scan') {
