@@ -1,5 +1,3 @@
-//@Library('jenkins-shared-library') _
-
 String applicationName = 'HCLCODE_Test'
 String packageName = "test"
 String s3BucketName = 'tf-test-1'
@@ -20,7 +18,14 @@ pipeline {
                 '''
             }
         }
-      
+
+        stage('Mend Scan') {
+            steps {
+                script {
+                 publish()
+                }
+            }
+        }
         stage('Mend Scan') {
             steps {
                 mend(
