@@ -2,7 +2,7 @@ String applicationName = 'HCLCODE_Test'
 String packageName = "floward-exercise"
 String s3BucketName = 'tf-test-1'
 String s3ObjectName
-String bundleFileName = "${packageName}.zip"
+String bundleFileName = "${packageName}"
 //String localFolderName = 'floward-exercise'
 
 pipeline {
