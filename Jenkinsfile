@@ -30,7 +30,7 @@ pipeline {
         stage('Publish to S3') {
             steps {
                 script {
-                 publish(
+                 s3ObjectName = publish(
                      applicationName: applicationName,
                      packageName: packageName,
                      s3BucketName: s3BucketName,
