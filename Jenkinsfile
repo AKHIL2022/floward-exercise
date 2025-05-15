@@ -3,6 +3,13 @@ String packageName = "floward-exercise"
 String s3BucketName = 'tf-test-1'
 String s3ObjectName
 String bundleFileName = "${packageName}"
+String versionFileName = "src/ui-zip.auto.tf"
+String authorName = 'Build'
+String authorEmail = 'jenkins-test@example.com'
+String gitEnvRepoCredentialsId = 'github-businessitcicd'
+String gitEnvRepoName = 'floward-exercise'
+String gitEnvDevBranchName = 'main'
+String gitEnvUrl = "git@github.com:AKHIL2022/${gitEnvRepoName}.git"
 //String localFolderName = 'floward-exercise'
 
 pipeline {
