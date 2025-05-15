@@ -2,6 +2,7 @@ String applicationName = 'HCLCODE_Test'
 String packageName = "test"
 String s3BucketName = 'tf-test-1'
 String s3ObjectName
+String bundleFileName = "dist/${packageName}.zip"
 //String localFolderName = 'floward-exercise'
 
 pipeline {
@@ -25,7 +26,8 @@ pipeline {
                  publish(
                      applicationName: applicationName,
                      s3BucketName: s3BucketName,
-                     s3ObjectName: s3ObjectName
+                     s3ObjectName: s3ObjectName,
+                     bundleFileName: bundleFileName
                  )
                 }
             }
