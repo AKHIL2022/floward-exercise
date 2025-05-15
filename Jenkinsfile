@@ -50,6 +50,7 @@ pipeline {
                      authorEmail: authorEmail,
                      gitEnvRepoCredentialsId: gitEnvRepoCredentialsId,
                      s3ObjectName: s3ObjectName   
+              )
             }
         }
         stage('Mend Scan') {
