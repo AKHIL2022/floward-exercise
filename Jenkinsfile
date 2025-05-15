@@ -3,7 +3,7 @@ String packageName = "floward-exercise"
 String s3BucketName = 'tf-test-1'
 String s3ObjectName
 String bundleFileName = "${packageName}"
-String versionFileName = ""
+String versionFileName = "src/ui-zip.auto.tf"
 String authorName = 'Build'
 String authorEmail = 'jenkins-test@example.com'
 String gitEnvRepoCredentialsId = 'github_test_key'
