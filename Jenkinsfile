@@ -2,7 +2,7 @@
 
 String applicationName = 'HCLCODE_Test'
 String packageName = "test"
-String s3BucketName = 'sandbox-tf-test '
+String s3BucketName = 'sandbox-tf-test'
 String s3ObjectName
 //String localFolderName = 'floward-exercise'
 
