@@ -22,7 +22,11 @@ pipeline {
         stage('Publish to S3') {
             steps {
                 script {
-                 publish()
+                 publish(
+                     applicationName: applicationName,
+                     s3BucketName: s3BucketName,
+                     s3ObjectName: s3ObjectName
+                 )
                 }
             }
         }
