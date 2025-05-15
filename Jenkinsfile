@@ -36,7 +36,8 @@ pipeline {
                      s3BucketName: s3BucketName,
                      bundleFileName: bundleFileName
                  )
-                }echo "Generated s3ObjectName: ${s3ObjectName}"
+                }
+                echo "Generated s3ObjectName: ${s3ObjectName}"
             }
         }
         stage('test') {
