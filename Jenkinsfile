@@ -24,11 +24,10 @@ pipeline {
             steps {
                 script {
                  publish(
-                     //applicationName: applicationName,
-                     //packageName: packageName,
-                     //s3BucketName: s3BucketName,
-                     //s3ObjectName: s3ObjectName,
-                     //bundleFileName: bundleFileName
+                     applicationName: applicationName,
+                     packageName: packageName,
+                     s3BucketName: s3BucketName,
+                     bundleFileName: bundleFileName
                  )
                 }
             }
