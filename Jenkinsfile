@@ -8,7 +8,7 @@ String authorName = 'Build'
 String authorEmail = 'jenkins-test@example.com'
 String gitEnvRepoCredentialsId = 'github_test_key'
 String gitEnvRepoName = 'floward-exercise-deployment'
-String gitEnvDevBranchName = 'main'
+String gitEnvDevBranchName = 'dev'
 String gitEnvUrl = "git@github.com:AKHIL2022/${gitEnvRepoName}.git"
 //String localFolderName = 'floward-exercise'
 
