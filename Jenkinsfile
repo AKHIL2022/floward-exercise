@@ -30,7 +30,12 @@ pipeline {
             }
         }
 
-        stage('Publish to S3') {
+        stage('build') {
+            steps {
+                test()
+            }
+
+       /* stage('Publish to S3') {
             steps {
                 script {
                  s3ObjectName = publish(
@@ -65,7 +70,7 @@ pipeline {
                      projectName: "${applicationName}-ui"
                 )     
             }
-        }
+        }*/
     }
     post {
         always {
