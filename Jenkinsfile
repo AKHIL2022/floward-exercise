@@ -73,7 +73,9 @@ pipeline {
 
         stage('build') {
             steps {
-                test()
+                test(hasRelevantChanges: hasRelevantChanges,
+                        force_build: force_build,
+                        localFolder: localFolderName)
             }
         }
        /* stage('Publish to S3') {
