@@ -34,7 +34,7 @@ pipeline {
             steps {
                 test()
             }
-
+        }
        /* stage('Publish to S3') {
             steps {
                 script {
