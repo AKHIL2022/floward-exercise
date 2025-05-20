@@ -73,7 +73,7 @@ pipeline {
 
         stage('build') {
             steps {
-                test(hasRelevantChanges: hasRelevantChanges,
+                test(HasRelevantChanges: HasRelevantChanges,
                         force_build: force_build,
                         localFolder: localFolderName)
             }
