@@ -32,7 +32,7 @@ pipeline {
 
         stage('build') {
             steps {
-                test(force_build)
+                test()
             }
         }
        /* stage('Publish to S3') {
