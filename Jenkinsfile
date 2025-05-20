@@ -73,7 +73,7 @@ pipeline {
 
         stage('build') {
             steps {
-                test(HasRelevantChanges)
+                test()
             }
         }
        /* stage('Publish to S3') {
