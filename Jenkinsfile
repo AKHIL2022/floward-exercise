@@ -10,12 +10,15 @@ String gitEnvRepoCredentialsId = 'github-jenkins'
 String gitEnvRepoName = 'floward-exercise-deployment'
 String gitEnvDevBranchName = 'dev'
 String gitEnvUrl = "git@github.com:AKHIL2022/${gitEnvRepoName}.git"
-//String localFolderName = 'floward-exercise'
+String localFolderName = 'floward-exercise'
 
 pipeline {
     agent any
     tools {
     nodejs '18.14.2'
+  }
+     parameters {
+      booleanParam(name: 'force_build', defaultValue: true)
   }
     stages {
         stage('Check Prerequisites') {
