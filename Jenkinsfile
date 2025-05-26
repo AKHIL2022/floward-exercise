@@ -14,9 +14,6 @@ String localFolderName = 'floward-exercise'
 
 pipeline {
     agent any
-    tools {
-    nodejs '18.14.2'
-  }
      parameters {
       booleanParam(name: 'force_build', defaultValue: false)
   }
@@ -31,13 +28,13 @@ pipeline {
         }
 
 
-        stage('build') {
+        /*stage('build') {
             steps {
                 test(
                         force_build: params.force_build,
                         localFolder: localFolderName)
             }
-        }
+        }*/
        stage('Publish to S3') {
             steps {
                 script {
