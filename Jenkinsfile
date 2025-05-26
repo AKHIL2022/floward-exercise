@@ -41,7 +41,7 @@ pipeline {
                 script {
                  s3ObjectName = publish(
                      applicationName: applicationName,
-                     packageName: packageName,
+                     Lambdaname: Lambdaname,
                      s3BucketName: s3BucketName,
                      bundleFileName: bundleFileName
                  )
