@@ -1,8 +1,9 @@
 String applicationName = 'HCLCODE_Test'
-String Lambdaname = "floward-exercise-test"
+//String Lambdaname = "floward-exercise-test"
+String packagename = "floward-exercise-test"
 String s3BucketName = 'tf-test-1'
 String s3ObjectName
-String bundleFileName = "${Lambdaname}"
+String bundleFileName = "${packagename}"
 String versionFileName = "src/ui-zip.auto.tf"
 String authorName = 'Build'
 String authorEmail = 'jenkins-test@example.com'
