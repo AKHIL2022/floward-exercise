@@ -18,7 +18,7 @@ pipeline {
     nodejs '18.14.2'
   }
      parameters {
-      booleanParam(name: 'force_build', defaultValue: true)
+      booleanParam(name: 'force_build', defaultValue: false)
   }
     stages {
         stage('Check Prerequisites') {
@@ -78,7 +78,7 @@ pipeline {
                         localFolder: localFolderName)
             }
         }
-       /* stage('Publish to S3') {
+       stage('Publish to S3') {
             steps {
                 script {
                  s3ObjectName = publish(
@@ -90,7 +90,7 @@ pipeline {
                 }
             }
         }
-        stage('test') {
+        /*stage('test') {
             steps {
                 update(
                      packageName: packageName,
