@@ -45,12 +45,4 @@ pipeline {
             }
         }
     }
-    post {
-        always {
-            echo "Pipeline execution completed."
-        }
-        failure {
-            echo "Pipeline failed. Check logs for details."
-        }
-    }
 }
