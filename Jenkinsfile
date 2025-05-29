@@ -36,42 +36,14 @@ pipeline {
                         localFolder: localFolderName)
             }
         }*/
-       stage('Publish to S3') {
-            steps {
-                script {
-                 s3ObjectName = publish(
-                     applicationName: applicationName,
-                     packagename: packagename,
-                     s3BucketName: s3BucketName,
-                     bundleFileName: bundleFileName
-                 )
-                }
-            }
-        }
-        /*stage('test') {
-            steps {
-                update(
-                     packageName: packageName,
-                     s3BucketName: s3BucketName,
-                     gitEnvDevBranchName: gitEnvDevBranchName,
-                     versionFileName: versionFileName,  
-                     authorName: authorName,
-                     authorEmail: authorEmail,
-                     gitEnvRepoCredentialsId: gitEnvRepoCredentialsId,
-                     s3ObjectName: s3ObjectName,
-                     gitEnvUrl: gitEnvUrl,
-                     gitEnvRepoName: gitEnvRepoName
-                    
-              )
-            }
-        }
+
         stage('Mend Scan') {
             steps {
                 mend(
                      projectName: "${applicationName}-ui"
                 )     
             }
-        }*/
+        }
     }
     post {
         always {
