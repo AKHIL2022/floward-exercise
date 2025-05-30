@@ -70,14 +70,18 @@ stage('Check Changes') {
       }
     }
      stage('Publish') {
+       when {
+            expression {
+               return HasRelevantChanges || params.force_build
+             }
+          }
       steps {
         script {
-           s3ObjectName = publishToS3(
+           s3ObjectName = publish(
             applicationName: applicationName,
             packageName: componentName,
             s3BucketName: s3BucketName,
             bundleFileName: bundleFileName,
-            force_build: params.force_build
            )
         }
       }
