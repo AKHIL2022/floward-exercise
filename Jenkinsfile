@@ -57,7 +57,7 @@ pipeline {
         stage('build') {
              when {
                expression {
-               return HasRelevantChanges || params.force_build
+               return hasRelevantChanges || params.force_build
              }
           }
       steps {
@@ -73,7 +73,7 @@ pipeline {
                  def projectName = "${applicationName}-ui"
                 mend(
                      projectName,
-                     IsPackageJsonChanged,
+                     isPackageJsonChanged,
                      params.force_build
                 ) 
               }
