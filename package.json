@@ -9,8 +9,8 @@
     },
     "scripts": {
       "start": "node index.js",
-      "test": "mvn test && npm test",
-      "build": "mvn clean package && npm run build",
+      "test": "npm test",
+      "build": "npm run build",
       "check-env": "node check-environment.js"
     },
     "dependencies": {
