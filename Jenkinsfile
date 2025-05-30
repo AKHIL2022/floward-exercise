@@ -39,10 +39,10 @@ pipeline {
       }
     }
 }
-    /* stage('Publish') {
+    stage('Publish') {
        when {
             expression {
-               return HasRelevantChanges || params.force_build
+               return HasRelevantChanges || forceBuild
              }
           }
       steps {
@@ -55,11 +55,11 @@ pipeline {
            )
         }
       }
-    }*/
+    }
         stage('build') {
              when {
                expression {
-               return hasRelevantChanges || params.forceBuild
+               return hasRelevantChanges || forceBuild
              }
           }
       steps {
