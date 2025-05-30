@@ -57,7 +57,7 @@ pipeline {
         stage('build') {
              when {
                expression {
-               return hasRelevantChanges || params.force_build
+               return hasRelevantChanges || params.forceBuild
              }
           }
       steps {
@@ -74,7 +74,7 @@ pipeline {
                 mend(
                      projectName,
                      isPackageJsonChanged,
-                     force_build
+                     forceBuild
                 ) 
               }
             }
