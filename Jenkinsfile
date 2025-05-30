@@ -79,8 +79,8 @@ pipeline {
            s3ObjectName = publish(
             applicationName,
             packagename,
-            s3BucketName,
-            bundleFileName
+            bundleFileName,
+            s3BucketName
            )
         }
       }
