@@ -56,6 +56,17 @@ pipeline {
         }
       }
     }
+         stage('Update Dev') {
+            when {
+                expression {
+                   return hasRelevantChanges || forceBuild
+                }
+            }
+            steps {
+                update(packageName, s3BucketName, gitEnvDevBranchName, versionFileName, authorName,
+                    authorEmail, gitEnvRepoCredentialsId, s3ObjectName, gitEnvUrl, gitEnvRepoName)
+            }
+        }
         stage('build') {
              when {
                expression {
@@ -77,7 +88,7 @@ pipeline {
                      projectName,
                      isPackageJsonChanged,
                      forceBuild
-                ) 
+                )
               }
             }
         }
