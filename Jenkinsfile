@@ -86,7 +86,8 @@ stage('Check Changes') {
             steps {
                 mend(
                      projectName: "${applicationName}-ui",
-                     IsPackageJsonChanged: IsPackageJsonChanged
+                     IsPackageJsonChanged: IsPackageJsonChanged,
+                     force_build: params.force_build
                 )     
             }
         }
