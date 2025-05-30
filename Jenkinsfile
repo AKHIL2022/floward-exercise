@@ -42,7 +42,7 @@ pipeline {
     stage('Publish') {
        when {
             expression {
-               return HasRelevantChanges || forceBuild
+               return hasRelevantChanges || forceBuild
              }
           }
       steps {
