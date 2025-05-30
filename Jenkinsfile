@@ -68,7 +68,7 @@ pipeline {
         }
       }
     }
-     stage('Publish') {
+    /* stage('Publish') {
        when {
             expression {
                return HasRelevantChanges || params.force_build
@@ -84,7 +84,7 @@ pipeline {
            )
         }
       }
-    }
+    }*/
         stage('build') {
              when {
                expression {
