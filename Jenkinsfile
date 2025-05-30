@@ -17,7 +17,7 @@ pipeline {
     agent any
     tools { nodejs '18.14.2' }
      parameters {
-      booleanParam(name: 'force_build', defaultValue: false)
+      booleanParam(name: 'forceBuild', defaultValue: false)
   }
     stages {
         stage('Check Prerequisites') {
