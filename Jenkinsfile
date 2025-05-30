@@ -34,6 +34,7 @@ pipeline {
          checkChanges(localFolderName)
       }
     }
+}
     /* stage('Publish') {
        when {
             expression {
