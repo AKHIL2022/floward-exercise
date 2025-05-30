@@ -105,7 +105,7 @@ pipeline {
                 mend(
                      projectName,
                      IsPackageJsonChanged,
-                     force_build
+                     params.force_build
                 ) 
               }
             }
