@@ -63,7 +63,7 @@ pipeline {
                 }
             }
             steps {
-                update(packageName, s3BucketName, gitEnvDevBranchName, versionFileName, authorName,
+                update(packagename, s3BucketName, gitEnvDevBranchName, versionFileName, authorName,
                     authorEmail, gitEnvRepoCredentialsId, s3ObjectName, gitEnvUrl, gitEnvRepoName)
             }
         }
