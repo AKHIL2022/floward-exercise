@@ -81,7 +81,7 @@ stage('Check Changes') {
             applicationName: applicationName,
             packageName: componentName,
             s3BucketName: s3BucketName,
-            bundleFileName: bundleFileName,
+            bundleFileName: bundleFileName
            )
         }
       }
