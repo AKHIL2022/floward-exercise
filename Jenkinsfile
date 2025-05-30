@@ -29,13 +29,13 @@ pipeline {
         }
 
 
-        /*stage('build') {
+        stage('build') {
             steps {
                 test(
                         force_build: params.force_build,
                         localFolder: localFolderName)
             }
-        }*/
+        }
 
         stage('Mend Scan') {
             steps {
