@@ -100,8 +100,9 @@ pipeline {
 
         stage('Mend Scan') {
             steps {
+                def projectName= "${applicationName}-ui"
                 mend(
-                     projectName = "${applicationName}-ui",
+                     projectName,
                      IsPackageJsonChanged,
                      force_build
                 )     
