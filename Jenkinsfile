@@ -15,6 +15,7 @@ String localFolderName = 'floward-exercise'
 
 pipeline {
     agent any
+    tools { nodejs '18.14.2' }
      parameters {
       booleanParam(name: 'force_build', defaultValue: false)
   }
