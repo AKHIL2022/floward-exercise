@@ -31,9 +31,9 @@ pipeline {
         stage('Check Changes') {
       steps {
         script {
-            def returnValue = checkChanges(localFolderName)
-            isPackageJsonChanged = returnValue.isPackageJsonChanged
-            hasRelevantChanges = returnValue.hasRelevantChanges
+            def returnValues = checkChanges(localFolderName)
+            isPackageJsonChanged = returnValues.isPackageJsonChanged
+            hasRelevantChanges = returnValues.hasRelevantChanges
       }
     }
 }
