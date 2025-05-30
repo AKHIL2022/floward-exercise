@@ -34,6 +34,8 @@ pipeline {
             def returnValues = checkChanges(localFolderName)
             isPackageJsonChanged = returnValues[0]
             hasRelevantChanges = returnValues[1] 
+            echo "Parsed isPackageJsonChanged: ${isPackageJsonChanged}"
+            echo "Parsed hasRelevantChanges: ${hasRelevantChanges}"
       }
     }
 }
