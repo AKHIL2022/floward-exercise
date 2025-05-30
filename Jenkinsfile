@@ -32,8 +32,8 @@ pipeline {
       steps {
         script {
             def returnValues = checkChanges(localFolderName)
-            isPackageJsonChanged = returnValues.isPackageJsonChanged
-            hasRelevantChanges = returnValues.hasRelevantChanges
+            isPackageJsonChanged = returnValues[0]
+            hasRelevantChanges = returnValues[1] 
       }
     }
 }
