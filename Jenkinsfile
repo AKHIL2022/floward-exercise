@@ -77,10 +77,10 @@ pipeline {
       steps {
         script {
            s3ObjectName = publish(
-            applicationName: applicationName,
-            componentName: packagename,
-            s3BucketName: s3BucketName,
-            bundleFileName: bundleFileName
+            applicationName,
+            packagename,
+            s3BucketName,
+            bundleFileName
            )
         }
       }
