@@ -85,7 +85,8 @@ stage('Check Changes') {
         stage('Mend Scan') {
             steps {
                 mend(
-                     projectName: "${applicationName}-ui"
+                     projectName: "${applicationName}-ui",
+                     IsPackageJsonChanged: IsPackageJsonChanged
                 )     
             }
         }
