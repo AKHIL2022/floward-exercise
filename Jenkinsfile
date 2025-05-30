@@ -74,7 +74,7 @@ pipeline {
                 mend(
                      projectName,
                      isPackageJsonChanged,
-                     params.force_build
+                     force_build
                 ) 
               }
             }
