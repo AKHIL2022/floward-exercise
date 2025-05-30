@@ -69,6 +69,19 @@ stage('Check Changes') {
         }
       }
     }
+     stage('Publish') {
+      steps {
+        script {
+           s3ObjectName = publishToS3(
+            applicationName: applicationName,
+            packageName: componentName,
+            s3BucketName: s3BucketName,
+            bundleFileName: bundleFileName,
+            force_build: params.force_build
+           )
+        }
+      }
+    }
         stage('build') {
              when {
                expression {
