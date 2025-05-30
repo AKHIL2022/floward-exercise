@@ -79,7 +79,7 @@ stage('Check Changes') {
         script {
            s3ObjectName = publish(
             applicationName: applicationName,
-            componentName: packageName,
+            componentName: packagename,
             s3BucketName: s3BucketName,
             bundleFileName: bundleFileName
            )
