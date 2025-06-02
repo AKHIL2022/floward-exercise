@@ -42,7 +42,7 @@ pipeline {
     stage('Publish') {
        when {
             expression {
-               return hasRelevantChanges || forceBuild
+               return hasRelevantChanges || params.forceBuild
              }
           }
       steps {
@@ -59,7 +59,7 @@ pipeline {
          stage('Update Dev') {
             when {
                 expression {
-                   return hasRelevantChanges || forceBuild
+                   return hasRelevantChanges || params.forceBuild
                 }
             }
             steps {
@@ -70,7 +70,7 @@ pipeline {
         stage('build') {
              when {
                expression {
-               return hasRelevantChanges || forceBuild
+               return hasRelevantChanges || params.forceBuild
              }
           }
       steps {
