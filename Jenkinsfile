@@ -11,7 +11,6 @@ String gitEnvRepoCredentialsId = 'github-jenkins'
 String gitEnvRepoName = 'floward-exercise'
 String gitEnvDevBranchName = 'main'
 String gitEnvUrl = "git@github.com:AKHIL2022/${gitEnvRepoName}.git"
-String localFolderName = "${env.WORKSPACE}"
 
 pipeline {
     agent any
@@ -19,6 +18,10 @@ pipeline {
      parameters {
       booleanParam(name: 'forceBuild', defaultValue: false)
   }
+    environment {
+        // Define localFolderName in the environment block
+        localFolderName = "${env.WORKSPACE ?: sh(script: 'pwd', returnStdout: true).trim()}"
+    }
     stages {
         stage('Check Prerequisites') {
             steps {
