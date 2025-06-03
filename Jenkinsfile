@@ -11,7 +11,7 @@ String gitEnvRepoCredentialsId = 'github-jenkins'
 String gitEnvRepoName = 'floward-exercise'
 String gitEnvDevBranchName = 'main'
 String gitEnvUrl = "git@github.com:AKHIL2022/${gitEnvRepoName}.git"
-String localFolderName = "/var/jenkins_home/workspace/jenkins-shared-template/floward-exercise"
+String localFolderName = "/var/jenkins_home/workspace/jenkins-shared-template/floward-exercise/"
 
 pipeline {
     agent any
