@@ -19,10 +19,6 @@ pipeline {
      parameters {
       booleanParam(name: 'forceBuild', defaultValue: false)
   }
-    environment {
-        // Define localFolderName in the environment block
-        localFolderName = "${env.WORKSPACE ?: sh(script: 'pwd', returnStdout: true).trim()}"
-    }
     stages {
         stage('Check Prerequisites') {
             steps {
