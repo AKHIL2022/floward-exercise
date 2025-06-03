@@ -34,7 +34,7 @@ pipeline {
         stage('Check Changes') {
       steps {
         script {
-            def returnValues = checkChanges(localFolderName)
+            def returnValues = checkChanges()
             isPackageJsonChanged = returnValues[0]
             hasRelevantChanges = returnValues[1] 
             echo "Parsed isPackageJsonChanged: ${isPackageJsonChanged}"
