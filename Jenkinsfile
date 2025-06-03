@@ -11,6 +11,7 @@ String gitEnvRepoCredentialsId = 'github-jenkins'
 String gitEnvRepoName = 'floward-exercise'
 String gitEnvDevBranchName = 'main'
 String gitEnvUrl = "git@github.com:AKHIL2022/${gitEnvRepoName}.git"
+String localFolderName = ""
 
 pipeline {
     agent any
@@ -34,7 +35,7 @@ pipeline {
         stage('Check Changes') {
       steps {
         script {
-            def returnValues = checkChanges()
+            def returnValues = checkChanges(localFolderName)
             isPackageJsonChanged = returnValues[0]
             hasRelevantChanges = returnValues[1] 
             echo "Parsed isPackageJsonChanged: ${isPackageJsonChanged}"
