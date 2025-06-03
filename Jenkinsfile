@@ -33,7 +33,7 @@ pipeline {
       steps {
         dir(localFolderName) {
           withCredentials([sshUserPrivateKey(credentialsId: gitCredentialId, keyFileVariable: 'SSH_KEY')]) {
-            sh "GIT_SSH_COMMAND=\"ssh -i \\\"$SSH_KEY\\\"\" npm ci"
+            sh "GIT_SSH_COMMAND=\"ssh -i \\\"$SSH_KEY\\\"\""
           }
         }
       }
