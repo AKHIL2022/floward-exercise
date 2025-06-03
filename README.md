@@ -1,4 +1,4 @@
 # floward-exercise
 test
 nn
-nj
+n
