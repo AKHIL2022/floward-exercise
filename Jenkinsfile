@@ -12,6 +12,7 @@ String gitEnvRepoName = 'floward-exercise'
 String gitEnvDevBranchName = 'main'
 String gitEnvUrl = "git@github.com:AKHIL2022/${gitEnvRepoName}.git"
 String localFolderName = "/"
+String gitCredentialId = 'github-jenkins'
 
 pipeline {
     agent any
@@ -28,6 +29,15 @@ pipeline {
                 '''
             }
         }
+         stage('Install') {
+      steps {
+        dir(localFolderName) {
+          withCredentials([sshUserPrivateKey(credentialsId: gitCredentialId, keyFileVariable: 'SSH_KEY')]) {
+            sh "GIT_SSH_COMMAND=\"ssh -i \\\"$SSH_KEY\\\"\" npm ci"
+          }
+        }
+      }
+    }
         stage('Check Changes') {
       steps {
         script {
