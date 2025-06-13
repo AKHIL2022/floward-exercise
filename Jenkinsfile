@@ -1,6 +1,6 @@
 String applicationName = 'HCLCODE_Test'
 //String Lambdaname = "floward-exercise-test"
-String packagename = "floward-exercise"
+String packagename = ""
 String s3BucketName = 'tf-test-1'
 String s3ObjectName
 String bundleFileName = "${packagename}"
