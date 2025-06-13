@@ -74,7 +74,7 @@ pipeline {
             }
             steps {
                 update(gitEnvRepoCredentialsId, gitEnvDevBranchName, gitEnvUrl, gitEnvRepoName, versionFileName,
-                    packageName, s3ObjectName, applicationName)
+                    packagename, s3ObjectName, applicationName)
             }
         }
         stage('build') {
