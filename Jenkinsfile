@@ -13,6 +13,8 @@ String gitEnvDevBranchName = 'main'
 String gitEnvUrl = "git@github.com:AKHIL2022/${gitEnvRepoName}.git"
 String localFolderName = "test"
 String gitCredentialId = 'github-jenkins'
+String isPackageJsonChanged,
+String hasRelevantChanges
 
 pipeline {
     agent any
@@ -41,7 +43,7 @@ pipeline {
         stage('Check Changes') {
       steps {
         script {
-            def (isPackageJsonChanged, hasRelevantChanges) = checkChanges(localFolderName)
+            (isPackageJsonChanged, hasRelevantChanges) = checkChanges(localFolderName)
             echo "Parsed isPackageJsonChanged: ${isPackageJsonChanged}"
             echo "Parsed hasRelevantChanges: ${hasRelevantChanges}"
       }
