@@ -41,7 +41,7 @@ pipeline {
         stage('Check Changes') {
       steps {
         script {
-            def (isPackageJsonChanged, hasRelevantChanges) = checkChangesInGitRepo(localFolderName)
+            def (isPackageJsonChanged, hasRelevantChanges) = checkChanges(localFolderName)
             echo "Parsed isPackageJsonChanged: ${isPackageJsonChanged}"
             echo "Parsed hasRelevantChanges: ${hasRelevantChanges}"
       }
