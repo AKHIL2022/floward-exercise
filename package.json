@@ -5,7 +5,7 @@
   "engines": {
     "node": ">=16.0.0",
     "npm": ">=7.0.1",
-    "java": ">=17.0.2"
+    "java": ">=17.0.3"
   },
   "scripts": {
     "start": "node index.js",
