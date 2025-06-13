@@ -49,7 +49,7 @@ pipeline {
       }
     }
 }
-   /* stage('Publish') {
+    stage('Publish') {
        when {
             expression {
                return hasRelevantChanges || params.forceBuild
@@ -73,8 +73,8 @@ pipeline {
                 }
             }
             steps {
-                update(packagename, s3BucketName, gitEnvDevBranchName, versionFileName, authorName,
-                    authorEmail, gitEnvRepoCredentialsId, s3ObjectName, gitEnvUrl, gitEnvRepoName)
+                update(gitEnvRepoCredentialsId, gitEnvDevBranchName, gitEnvUrl, gitEnvRepoName, versionFileName,
+                    packageName, s3ObjectName, applicationName)
             }
         }
         stage('build') {
