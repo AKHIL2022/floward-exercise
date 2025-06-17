@@ -79,18 +79,6 @@ pipeline {
                     packagename, s3ObjectName, applicationName)
             }
         }
-        stage('build') {
-             when {
-               expression {
-               return hasRelevantChanges || params.forceBuild
-             }
-          }
-      steps {
-        dir(localFolderName) {
-          test()
-        }
-      }
-    }
 
         stage('Mend Scan') {
             steps {
