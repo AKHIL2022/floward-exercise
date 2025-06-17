@@ -63,6 +63,8 @@ pipeline {
             bundleFileName,
             s3BucketName
            )
+            echo "Parsed isPackageJsonChanged: ${isPackageJsonChanged}"
+            echo "Parsed hasRelevantChanges: ${hasRelevantChanges}"
         }
       }
     }
