@@ -11,7 +11,6 @@ String gitEnvRepoCredentialsId = 'github-jenkins'
 String gitEnvRepoName = 'floward-exercise'
 String gitEnvDevBranchName = 'main'
 String gitEnvUrl = "git@github.com:AKHIL2022/${gitEnvRepoName}.git"
-String localFolderName = "test"
 String gitCredentialId = 'github-jenkins'
 boolean isPackageJsonChanged
 boolean hasRelevantChanges
