@@ -13,8 +13,8 @@ String gitEnvDevBranchName = 'main'
 String gitEnvUrl = "git@github.com:AKHIL2022/${gitEnvRepoName}.git"
 String localFolderName = "test"
 String gitCredentialId = 'github-jenkins'
-String isPackageJsonChanged
-String hasRelevantChanges
+boolean isPackageJsonChanged
+boolean hasRelevantChanges
 
 pipeline {
     agent any
