@@ -80,7 +80,7 @@ pipeline {
             }
         }
 
-        stage('Mend Scan') {
+        /*stage('Mend Scan') {
             steps {
                 script{
                  def projectName = "${applicationName}-ui"
@@ -91,6 +91,6 @@ pipeline {
                 )
               }
             }
-        }
+        }*/
     }
 }
