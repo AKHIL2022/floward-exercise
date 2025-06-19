@@ -72,7 +72,7 @@ pipeline {
         }
       }
     }
-         /*stage('Update Dev') {
+         stage('Update Dev') {
             when {
                 expression {
                    return hasRelevantChanges || params.forceBuild
@@ -82,7 +82,7 @@ pipeline {
                 update(gitEnvRepoCredentialsId, gitEnvDevBranchName, gitEnvUrl, gitEnvRepoName, versionFileName,
                     packagename, s3ObjectName, applicationName)
             }
-        }*/
+        }
 
         /*stage('Mend Scan') {
             steps {
