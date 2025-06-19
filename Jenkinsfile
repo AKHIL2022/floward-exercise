@@ -79,7 +79,7 @@ pipeline {
                 }
             }
             steps {
-                update(gitEnvRepoCredentialsId, gitEnvDevBranchName, gitEnvUrl, gitEnvRepoName, versionFileName,
+                update(gitEnvRepoCredentialsId, gitEnvDevBranchName, gitEnvUrl, versionFileName,
                     packagename, s3ObjectName, applicationName)
             }
         }
