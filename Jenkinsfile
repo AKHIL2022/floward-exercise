@@ -16,7 +16,7 @@ boolean isPackageJsonChanged
 boolean hasRelevantChanges
 
 pipeline {
-    agent {label 'slave1'}
+    agent any
     tools { nodejs '18.14.2' }
      parameters {
       booleanParam(name: 'forceBuild', defaultValue: false, description: 'this is to force the build')
