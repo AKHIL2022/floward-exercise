@@ -44,11 +44,13 @@ pipeline {
         }
       }
     }
-
+     stage('Check Changes') {
+      steps {
     (isPackageJsonChanged, hasRelevantChanges) = checkChanges(localFolderName)
      echo "Parsed isPackageJsonChanged: ${isPackageJsonChanged}"
     echo "Parsed hasRelevantChanges: ${hasRelevantChanges}"
-
+      }
+     }
     stage('Publish') {
        when {
             expression {
