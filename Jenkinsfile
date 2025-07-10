@@ -1,6 +1,6 @@
 String applicationName = 'HCLCODE_Test'
 String localFolderName = ""
-String lamdaName = "HCLCODE_Test-deployment-10"
+String lamdaName = "HCLCODE_Test"
 String s3BucketName = 'tf-test-1'
 String s3ObjectName
 String bundleFileName = "${lamdaName}"
@@ -8,11 +8,11 @@ String versionFileName = "ui-zip.auto.tf"
 String authorName = 'Build'
 String authorEmail = 'jenkins-test@example.com'
 String gitEnvRepoCredentialsId = 'github-jenkins'
-String gitEnvRepoName = 'floward-exercise-deployment-92'
+String gitEnvRepoName = 'floward-exercise-deployment-93'
 String gitEnvDevBranchName = 'dev'
 String gitEnvUrl = "git@github.com:AKHIL2022/${gitEnvRepoName}.git"
 String gitCredentialId = 'github-jenkins'
-String localsFormat = 'lamdaBuild'
+String localsFormat = 'moduleBuild'
 boolean isPackageJsonChanged
 boolean hasRelevantChanges
 
