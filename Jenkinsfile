@@ -1,6 +1,6 @@
 String applicationName = 'HCLCODE_Test'
 String localFolderName = ""
-String lamdaName = "HCLCODE_Test"
+String lamdaName = "HCLCODE_Test-deployment-10"
 String s3BucketName = 'tf-test-1'
 String s3ObjectName
 String bundleFileName = "${lamdaName}"
