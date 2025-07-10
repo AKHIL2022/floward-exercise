@@ -4,7 +4,7 @@ String lamdaName = "HCLCODE_Test-deployment-10"
 String s3BucketName = 'tf-test-1'
 String s3ObjectName
 String bundleFileName = "${lamdaName}"
-String versionFileName = "src/ui-zip.auto.tf"
+String versionFileName = "ui-zip.auto.tf"
 String authorName = 'Build'
 String authorEmail = 'jenkins-test@example.com'
 String gitEnvRepoCredentialsId = 'github-jenkins'
