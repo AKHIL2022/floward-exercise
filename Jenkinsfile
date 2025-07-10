@@ -81,7 +81,7 @@ pipeline {
             }
             steps {
                 update(gitEnvRepoCredentialsId, gitEnvDevBranchName, gitEnvUrl, versionFileName,
-                    lambdaName, s3ObjectName, applicationName, localFolderName, localsFormat)
+                    lamdaName, s3ObjectName, applicationName, localFolderName, localsFormat)
             }
         }
 
