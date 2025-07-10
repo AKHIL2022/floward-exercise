@@ -1,9 +1,9 @@
 String applicationName = 'HCLCODE_Test'
 String localFolderName = ""
-String packagename = ""
+String lamdbaName = "noob"
 String s3BucketName = 'tf-test-1'
 String s3ObjectName
-String bundleFileName = "${packagename}"
+String bundleFileName = "${lamdbaName}"
 String versionFileName = "src/ui-zip.auto.tf"
 String authorName = 'Build'
 String authorEmail = 'jenkins-test@example.com'
@@ -12,6 +12,7 @@ String gitEnvRepoName = 'floward-exercise-deployment'
 String gitEnvDevBranchName = 'dev'
 String gitEnvUrl = "git@github.com:AKHIL2022/${gitEnvRepoName}.git"
 String gitCredentialId = 'github-jenkins'
+String localsFormat = 'moduleBuild'
 boolean isPackageJsonChanged
 boolean hasRelevantChanges
 
@@ -80,7 +81,7 @@ pipeline {
             }
             steps {
                 update(gitEnvRepoCredentialsId, gitEnvDevBranchName, gitEnvUrl, versionFileName,
-                    packagename, s3ObjectName, applicationName)
+                    lambdaName, s3ObjectName, applicationName, String localFolderName, String localsFormat)
             }
         }
 
