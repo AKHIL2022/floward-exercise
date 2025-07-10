@@ -12,7 +12,7 @@ String gitEnvRepoName = 'floward-exercise-deployment-93'
 String gitEnvDevBranchName = 'dev'
 String gitEnvUrl = "git@github.com:AKHIL2022/${gitEnvRepoName}.git"
 String gitCredentialId = 'github-jenkins'
-String localsFormat = 'moduleBuild'
+String localsFormat = 'lamdaBuild'
 boolean isPackageJsonChanged
 boolean hasRelevantChanges
 
