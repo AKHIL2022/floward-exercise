@@ -64,7 +64,7 @@ pipeline {
                    return hasRelevantChanges || params.forceBuild
                 }
             }
-             step{
+             steps{
                 build()
             }
     }
