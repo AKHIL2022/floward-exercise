@@ -20,7 +20,8 @@
     "coverage": "c8 --reporter=html --reporter=text --reporter=text-summary npm test",
     "coverage:ci": "c8 --reporter=lcov --reporter=text --reporter=text-summary npm run test:reporters",
     "lint": "eslint . --cache",
-    "lint-fix": "eslint . --fix"
+    "lint-fix": "eslint . --fix",
+    "build": "webpack --stats-error-details"
   },
   "keywords": ["webpack", "build"],
   },
