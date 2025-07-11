@@ -1,22 +1,15 @@
 {
-  "name": "test",
+  "name": "simple-test-project",
   "version": "1.0.0",
-  "description": "Simple project for testing in Jenkins",
-  "engines": {
-    "node": ">=16.0.0",
-    "npm": ">=7.0.1"
-  },
+  "description": "A simple Node.js project for testing",
+  "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "build": "webpack --config webpack.config.js",
-    "test": "echo 'No tests defined'"
+    "test": "jest"
   },
-  "dependencies": {
-    "express": "^4.18.8"
-  },
+  "keywords": ["testing", "jest"],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "core-js": "^3.37.1",
-    "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4"
+    "jest": "^29.7.0"
   }
 }
