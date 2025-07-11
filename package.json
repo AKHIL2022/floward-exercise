@@ -24,7 +24,6 @@
     "build": "webpack --stats-error-details"
   },
   "keywords": ["webpack", "build"],
-  },
   "author": "Joyee Cheung <joyeec9h3@gmail.com>",
   "repository": {
     "type": "git",
@@ -71,6 +70,8 @@
     "eslint-plugin-promise": "^7.2.1",
     "globals": "^16.0.0",
     "neostandard": "^0.12.1",
-    "sinon": "^20.0.0"
+    "sinon": "^20.0.0",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
   }
 }
