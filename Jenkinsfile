@@ -17,14 +17,16 @@ boolean hasRelevantChanges
 
 pipeline {
     agent any
-    tools { nodejs '18.14.2' }
-     parameters {
-      booleanParam(name: 'forceBuild', defaultValue: false, description: 'this is to force the build')
-  }
-    options{
-      buildDiscarder(logRotator(numToKeepStr: '5'))
-      disableConcurrentBuilds(abortPrevious: true)
-      disableResume()
+    tools {
+        nodejs '18.14.2'
+    }
+    parameters {
+        booleanParam(name: 'forceBuild', defaultValue: false, description: 'this is to force the build')
+    }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '5'))
+        disableConcurrentBuilds(abortPrevious: true)
+        disableResume()
     }
     stages {
         stage('Check Prerequisites') {
@@ -35,69 +37,70 @@ pipeline {
                 '''
             }
         }
-
         stage('Install') {
             steps {
                 install(gitCredentialId)
             }
         }
-        stage('Npm Audit'){
-             steps {
-            script{
-                sh 'npm audit --audit-level=high'
-            }
-        }
-    }
-     stage('Check Changes') {
-      steps {
-     script{
-    (isPackageJsonChanged, hasRelevantChanges) = checkChanges(localFolderName)
-     echo "Parsed isPackageJsonChanged: ${isPackageJsonChanged}"
-    echo "Parsed hasRelevantChanges: ${hasRelevantChanges}"
-      }
-     }
-     }
-        stage('Build'){
-            when {
-                expression {
-                   return hasRelevantChanges || params.forceBuild
+        stage('Npm Audit') {
+            steps {
+                script {
+                    sh 'npm audit --audit-level=high'
                 }
             }
-             steps {
-                build()
-            }
-    }
-    stage('Publish') {
-       when {
-            expression {
-               return hasRelevantChanges || params.forceBuild
-             }
-          }
-      steps {
-        script {
-           s3ObjectName = publish(
-            applicationName,
-            lamdaName,
-            bundleFileName,
-            s3BucketName
-           )
-            echo "Parsed isPackageJsonChanged: ${isPackageJsonChanged}"
-            echo "Parsed hasRelevantChanges: ${hasRelevantChanges}"
         }
-      }
-    }
-         stage('Update Dev') {
+        stage('Check Changes') {
+            steps {
+                script {
+                    (isPackageJsonChanged, hasRelevantChanges) = checkChanges(localFolderName)
+                    echo "Parsed isPackageJsonChanged: ${isPackageJsonChanged}"
+                    echo "Parsed hasRelevantChanges: ${hasRelevantChanges}"
+                }
+            }
+        }
+        stage('Build') {
             when {
                 expression {
-                   return hasRelevantChanges || params.forceBuild
+                    return hasRelevantChanges || params.forceBuild
                 }
             }
             steps {
-                update(gitEnvRepoCredentialsId, gitEnvDevBranchName, gitEnvUrl, versionFileName,
-                    lamdaName, s3ObjectName, applicationName, localFolderName, localsFormat = 'lamdaBuild')
+                build()
             }
         }
-
+        stage('Publish') {
+            when {
+                expression {
+                    return hasRelevantChanges || params.forceBuild
+                }
+            }
+            steps {
+                script {
+                    s3ObjectName = publish(
+                        applicationName,
+                        lamdaName,
+                        bundleFileName,
+                        s3BucketName
+                    )
+                    echo "Parsed isPackageJsonChanged: ${isPackageJsonChanged}"
+                    echo "Parsed hasRelevantChanges: ${hasRelevantChanges}"
+                }
+            }
+        }
+        stage('Update Dev') {
+            when {
+                expression {
+                    return hasRelevantChanges || params.forceBuild
+                }
+            }
+            steps {
+                update(
+                    gitEnvRepoCredentialsId, gitEnvDevBranchName, gitEnvUrl, versionFileName,
+                    lamdaName, s3ObjectName, applicationName, localFolderName, localsFormat 
+                        = 'lamdaBuild'
+                )
+            }
+        }
         /*stage('Mend Scan') {
             steps {
                 script{
