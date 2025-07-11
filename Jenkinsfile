@@ -41,6 +41,11 @@ pipeline {
                 install(gitCredentialId)
             }
         }
+        stage9'Npm Audit'){
+            script{
+                sh 'npm audit --audit-level=high'
+            }
+        }
      stage('Check Changes') {
       steps {
      script{
