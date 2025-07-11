@@ -57,14 +57,13 @@ pipeline {
       }
      }
      }
-
         stage('Build'){
             when {
                 expression {
                    return hasRelevantChanges || params.forceBuild
                 }
             }
-             steps{
+             steps {
                 build()
             }
     }
