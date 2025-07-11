@@ -65,9 +65,11 @@ pipeline {
                 }
             }
             steps {
+                script {
                 build()
             }
         }
+    }
         stage('Publish') {
             when {
                 expression {
