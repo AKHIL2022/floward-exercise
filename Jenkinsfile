@@ -57,6 +57,17 @@ pipeline {
       }
      }
      }
+
+        stage('Build'){
+            when {
+                expression {
+                   return hasRelevantChanges || params.forceBuild
+                }
+            }
+             step{
+                build()
+            }
+    }
     stage('Publish') {
        when {
             expression {
