@@ -12,7 +12,6 @@ String gitEnvRepoName = 'floward-exercise-deployment-94'
 String gitEnvDevBranchName = 'dev'
 String gitEnvUrl = "git@github.com:AKHIL2022/${gitEnvRepoName}.git"
 String gitCredentialId = 'github-jenkins'
-String localsFormat = 'moduleBuild'
 boolean isPackageJsonChanged
 boolean hasRelevantChanges
 
@@ -85,7 +84,7 @@ pipeline {
             }
             steps {
                 update(gitEnvRepoCredentialsId, gitEnvDevBranchName, gitEnvUrl, versionFileName,
-                    lamdaName, s3ObjectName, applicationName, localFolderName, localsFormat)
+                    lamdaName, s3ObjectName, applicationName, localFolderName, localsFormat = 'moduleBuild')
             }
         }
 
