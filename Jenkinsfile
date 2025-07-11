@@ -65,9 +65,7 @@ pipeline {
                 }
             }
             steps {
-                script {
                 build()
-            }
         }
     }
         stage('Publish') {
