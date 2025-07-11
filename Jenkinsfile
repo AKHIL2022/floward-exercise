@@ -35,19 +35,13 @@ pipeline {
                 '''
             }
         }
-         stage('Install') {
-             environment {
-        NPM_PAT = credentials('github-pat')
-      }
-      steps {
-             
-        dir(localFolderName) {
-          withCredentials([sshUserPrivateKey(credentialsId: gitCredentialId, keyFileVariable: 'SSH_KEY')]) {
-            sh "GIT_SSH_COMMAND=\"ssh -i \\\"$SSH_KEY\\\"\""
-          }
+
+         stages {
+        stage('Install') {
+            steps {
+                install(gitCredentialId)
+            }
         }
-      }
-    }
      stage('Check Changes') {
       steps {
      script{
