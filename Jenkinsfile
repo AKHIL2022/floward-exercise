@@ -36,7 +36,6 @@ pipeline {
             }
         }
 
-         stages {
         stage('Install') {
             steps {
                 install(gitCredentialId)
