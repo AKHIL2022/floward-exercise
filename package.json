@@ -7,8 +7,16 @@
     "node": "^18.18.0 || >=20.0.0"
   },
   "scripts": {
-  "build": "webpack --mode production",
-  "keywords": ["webpack", "build"],
+    "prebuild": "rimraf dist",
+    "copy:source": "cpx \"src/**/*\" dist",
+    "copy:package": "cpx package.json dist",
+    "build": "npm-run-all copy:source copy:package",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "utilities",
+    "nodejs-core"
+  ],
   "author": "Joyee Cheung <joyeec9h3@gmail.com>",
   "repository": {
     "type": "git",
@@ -20,8 +28,8 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "webpack": "^5.95.0",
-    "webpack-cli": "^5.1.4"
+    "cpx": "^1.5.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.5"
   }
-}
 }
