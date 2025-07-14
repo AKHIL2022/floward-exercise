@@ -43,6 +43,11 @@ pipeline {
             }
         }
         stage('Npm Audit') {
+            when {
+                expression {
+                    return hasRelevantChanges || params.forceBuild
+                }
+            }
             steps {
                 script {
                     sh 'npm audit --audit-level=high'
