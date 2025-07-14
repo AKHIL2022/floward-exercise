@@ -7,7 +7,7 @@
     "node": "^18.18.0 || >=20.0.0"
   },
   "scripts": {
-    "build": "webpack --mode production",
+  "build": "webpack --mode production",
   "keywords": ["webpack", "build"],
   "author": "Joyee Cheung <joyeec9h3@gmail.com>",
   "repository": {
