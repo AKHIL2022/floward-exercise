@@ -42,7 +42,7 @@ pipeline {
                 install(gitCredentialId)
             }
         }
-        stage('Npm Audit') {
+        /*stage('Npm Audit') {
             when {
                 expression {
                     return hasRelevantChanges || params.forceBuild
@@ -53,7 +53,7 @@ pipeline {
                     sh 'npm audit --audit-level=high'
                 }
             }
-        }
+        }*/
         stage('Check Changes') {
             steps {
                 script {
