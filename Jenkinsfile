@@ -16,7 +16,7 @@ boolean isPackageJsonChanged
 boolean hasRelevantChanges
 
 pipeline {
-    agent any
+    agent { slave1 }
     tools {
         nodejs '18.14.2'
     }
