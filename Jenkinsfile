@@ -71,7 +71,7 @@ pipeline {
             }
             steps {
                 buildDependency()
-    }
+     }
         }
         stage('Publish') {
             when {
