@@ -102,7 +102,7 @@ pipeline {
                 update(
                     gitEnvRepoCredentialsId, gitEnvDevBranchName, gitEnvUrl, versionFileName,
                     lamdaName, s3ObjectName, applicationName, localFolderName, localsFormat 
-                        = 'lamdaBuild'
+                        = 'moduleBuild'
                 )
             }
         }
