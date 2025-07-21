@@ -63,7 +63,7 @@ pipeline {
                 }
             }
         }
-        stage('Build') {
+       /* stage('Build') {
             when {
                 expression {
                     return hasRelevantChanges || params.forceBuild
@@ -72,7 +72,7 @@ pipeline {
             steps {
                 buildDependency()
             }
-        }
+        }*/
         stage('Publish') {
             when {
                 expression {
