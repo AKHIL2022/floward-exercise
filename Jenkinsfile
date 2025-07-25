@@ -28,6 +28,11 @@ pipeline {
         disableConcurrentBuilds(abortPrevious: true)
         disableResume()
     }
+    environment{
+        DYNAMODB_LOCAL_PORT = 8000
+        DYNAMODB_LOCAL_DIR = "${localFolderName}/dynamodb_local"
+        COVERAGE_THRESHOLD = 70
+    }
     stages {
         stage('Check Prerequisites') {
             steps {
