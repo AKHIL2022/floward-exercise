@@ -106,7 +106,7 @@ pipeline {
             steps {
                 update(
                     gitEnvRepoCredentialsId, gitEnvDevBranchName, gitEnvUrl, versionFileName,
-                    lamdaName, s3ObjectName, applicationName, localFolderName, 'modulebuild')
+                    lamdaName, s3ObjectName, applicationName, localFolderName)
             }
         }
         /*stage('Mend Scan') {
