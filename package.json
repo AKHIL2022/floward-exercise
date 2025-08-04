@@ -11,7 +11,7 @@
     "copy:source": "cpx \"src/**/*\" dist",
     "copy:package": "cpx package.json dist",
     "build": "npm-run-all copy:source copy:package",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --passWithNoTests --coverage --coverageDirectory=coverage/jest"
   },
   "keywords": [
     "utilities",
