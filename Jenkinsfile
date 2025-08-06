@@ -39,11 +39,6 @@ pipeline {
                 '''
             }
         }
-        stage('Security Audit') {
-            steps {
-                    mend(projectName, isPackageJsonChanged, continueOnAuditFail)
-                    }
-        }
         stage('Check Changes') {
             steps {
                 script {
@@ -52,6 +47,11 @@ pipeline {
                     echo "Parsed hasRelevantChanges: ${hasRelevantChanges}"
                 }
             }
+        }
+          stage('Security Audit') {
+            steps {
+                    mend(projectName, isPackageJsonChanged, continueOnAuditFail)
+                    }
         }
        /* stage('Build') {
             when {
