@@ -39,12 +39,7 @@ pipeline {
                 '''
             }
         }
-        stage('Install') {
-            steps {
-                install(gitCredentialId)
-            }
-        }
-        stage('Test') {
+        stage('Security Audit') {
             steps {
                     mend(projectName, isPackageJsonChanged, continueOnAuditFail)
                     }
