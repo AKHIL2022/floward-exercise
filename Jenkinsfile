@@ -23,15 +23,13 @@ pipeline {
     parameters {
         booleanParam(name: 'forceBuild', defaultValue: true, description: 'this is to force the build')
     }
+    parameters {
+        booleanParam(name: 'continueOnAuditFail', defaultValue: false, description: 'this is to force the build')
+    }
     options {
         buildDiscarder(logRotator(numToKeepStr: '5'))
         disableConcurrentBuilds(abortPrevious: true)
         disableResume()
-    }
-    environment{
-        DYNAMODB_LOCAL_PORT = 8000
-        DYNAMODB_LOCAL_DIR = "${localFolderName}/dynamodb_local"
-        COVERAGE_THRESHOLD = 70
     }
     stages {
         stage('Check Prerequisites') {
@@ -49,7 +47,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                        mend()
+                    mend()
                     }
         }
         stage('Check Changes') {
