@@ -1,5 +1,6 @@
 String applicationName = 'HCLCODE_Test'
 String localFolderName = ""
+String projectName = 'HCLCODE_Test'
 String lamdaName = "HCLCODE_Test-deployment-10"
 String s3BucketName = 'tf-test-1'
 String s3ObjectName
@@ -45,7 +46,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                    mend()
+                    mend(projectName, isPackageJsonChanged, continueOnAuditFail)
                     }
         }
         stage('Check Changes') {
