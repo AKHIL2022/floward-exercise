@@ -22,8 +22,6 @@ pipeline {
     }
     parameters {
         booleanParam(name: 'forceBuild', defaultValue: true, description: 'this is to force the build')
-    }
-    parameters {
         booleanParam(name: 'continueOnAuditFail', defaultValue: false, description: 'this is to force the build')
     }
     options {
