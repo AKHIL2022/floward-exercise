@@ -107,4 +107,12 @@ pipeline {
             }
         }*/
     }
+    post {
+        unsuccessful {
+            googlechatnotification(
+                url: 'https://chat.googleapis.com/v1/spaces/AAQAL0Siras/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=hmDix6WJFY8d4i7GYHiBPenTSNoNYnc8pe-eBcqslUI',
+                message: ":x: Build Failed ${currentBuild.currentResult} \n Link: 'http://localhost:8084/job/jenkins-shared-template/${BUILD_NUMBER}'"
+            )
+        }
+    }
 }
